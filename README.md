@@ -37,12 +37,17 @@ We tried to make the code self-explanatory, so everything else should be easy
 to understand by just looking at the code.
 
 ## Usage (IMP)
-First, you need to run the tracker; To do that, simply run `python3 tracker.py`. 
-Then you need to run some nodes using the following line:
+First, you need to run the tracker; To do that, simply run. 
+
+`python3 tracker.py`. 
+
+then using multiple terminals for demonstration go to next terminal or split terminal .
+Then you need to run some nodes as per your requirement each node on differnet terminal using the following line:
 ```commandline
 python3 node.py -n <node name> -p <input port> <output port>
 ```
-e.g. python3 node.py -n NodeA -p 8080 9090
+e.g. python3  node.py -n NodeA -p 8080 9090. 
+
 Now the `node.py` waits for your command to be entered. Possible commands are:
 - `torrent -setMode upload <filename>` to upload a file and wait for requests.
 - `torrent -setMode download <filename>` to start downloading a file.
