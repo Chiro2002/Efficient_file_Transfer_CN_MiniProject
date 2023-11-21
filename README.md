@@ -36,23 +36,36 @@ parts of data sent by different nodes.
 We tried to make the code self-explanatory, so everything else should be easy
 to understand by just looking at the code.
 
-## Usage (IMP)
+## How to use !! (IMP)
+
+## 1. 
 First, you need to run the tracker; To do that, simply run. 
 
 `python3 tracker.py`. 
 
+## 2. 
 then using multiple terminals for demonstration go to next terminal or split terminal .
 Then you need to run some nodes as per your requirement each node on differnet terminal using the following line:
 ```commandline
 python3 node.py -n <node name> -p <input port> <output port>
 ```
-e.g. python3  node.py -n NodeA -p 8080 9090. 
+e.g. python3  node.py -n NodeA -p 8080 9090.\
+simillarly in different terminals create a nodeB , nodeC ,nodeD ......
 
+## 3.
 Now the `node.py` waits for your command to be entered. Possible commands are:
 - `torrent -setMode upload <filename>` to upload a file and wait for requests.
 - `torrent -setMode download <filename>` to start downloading a file.
 - `torrent exit` to exit the network.
-- e.g. torrent -m upload avengers.png
+
+- to upload any file it must be present inside `nodeA` in that directory `nodefiles` or whatever node uploading in that folder that file must be present
+- e.g. (inside node A where you see key is found! , below that write like following )\
+torrent -setMode upload avengers.png         //     to upload files let suppose nodeA has this file
+- e.g.(let suppose nodeD want to donwload file so inside nodeD terminal)\
+torrent -setNode download avengers.png      //    to download file in nodeD
+  
+after that you will see the file will be transfered from nodeA to nodeD
+upload same file from multiple nodes to make it faster transfer 
 
 
 
